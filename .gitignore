@@ -1,2 +1,6 @@
 # Nix.
 .direnv/
+# Python.
+venv/
+# Models.
+*.h5
