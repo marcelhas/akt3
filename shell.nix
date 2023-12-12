@@ -1,20 +1,24 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 with pkgs;
 
 mkShell {
   buildInputs = [
     python3
-    (python3.withPackages (ps: with ps; with python3Packages; [
-      jupyter
-      ipython
+    pipreqs
+    (python3.withPackages (ps:
+      with ps;
+      with python3Packages; [
+        jupyter
+        ipython
 
-      pandas
-      numpy
-      matplotlib
-      keras
-      tensorflow
-    ]))
+        pandas
+        numpy
+        matplotlib
+        keras
+        scikit-learn
+        tensorflow
+      ]))
   ];
 }
 
